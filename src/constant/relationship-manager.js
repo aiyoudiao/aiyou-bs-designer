@@ -1,0 +1,6 @@
+export const RELATIONSHIP_MANAGER = 'relationship_manager'
+export const RELATIONSHIP_MANAGER_PATH = '/relationship_manager'
+export const RELATIONSHIP_MANAGER_ZHCN = '关系数据可视化'
+export const RELATIONSHIP_MANAGER_INDEX = 'relationship-index'
+export const RELATIONSHIP_MANAGER_INDEX_PATH = 'relationship-index'
+export const RELATIONSHIP_MANAGER_INDEX_ZHCN = '关系可视化'

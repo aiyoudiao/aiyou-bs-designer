@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17500244",
+      "name": "校园优化",
+      "font_class": "MR",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "17500292",
+      "name": "楼宇库",
+      "font_class": "MR1",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "17500320",
+      "name": "基础数据管理",
+      "font_class": "MR2",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "17501882",
+      "name": "网络质量评价",
+      "font_class": "svg2",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "17502222",
+      "name": "高速优化",
+      "font_class": "svg21",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "17502287",
+      "name": "景区优化",
+      "font_class": "svg22",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "17503456",
+      "name": "精准规划",
+      "font_class": "svg23",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "17503529",
+      "name": "校园优化new",
+      "font_class": "svg24",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    }
+  ]
+}

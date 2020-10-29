@@ -1,0 +1,209 @@
+/* 全局变量 */
+$myTitle: 20px;
+$myContent: 14px;
+$tableHeight: 35px;
+
+/* #dv-full-screen-container */
+::v-deep #dv-full-screen-container {
+    position: absolute;
+    height: auto !important;
+    background-color: #fff;
+    // min-width: 1920px;
+    min-height: 1080px;
+}
+
+::v-deep .dv-loading {
+    position: fixed;
+    height: calc(97vh - 100px);
+}
+
+::v-deep .dv-scroll-board {
+    color: #333;
+    font-size: $myContent;
+    text-align: center;
+
+}
+
+::v-deep .dv-scroll-board .header {
+    font-size: $myContent;
+    text-align: center;
+    color: #000;
+    line-height: $myTitle;
+    position: relative;
+}
+
+::v-deep .dv-scroll-board .header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #46bab1;
+    left: 0px;
+    bottom: 0px;
+    z-index: 8;
+}
+
+::v-deep .dv-scroll-board .header .header-item {
+    text-align: center;
+}
+
+::v-deep .dv-scroll-board .rows .row-item {
+    font-size: $myContent;
+    height: 50px;
+    line-height: 50px;
+}
+
+::v-deep .dv-scroll-board .rows .ceil {
+    text-align: center;
+}
+
+/* 清除浮动 */
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ==============================分割线============================= */
+
+/* 页面样式 */
+#cell-phone {
+    color: #333;
+    // background-color: #000000;
+    // width: 100vw;
+    // height: 100vh;
+    // height: calc(97vh - 88px);
+
+    .bg {
+        // box-sizing: border-box;
+        padding: 20px 0;
+        background: #fff;
+    }
+
+    .zph-container {
+        padding-left: 50px;
+        padding-right: 38px;
+    }
+
+    .zph-data-title,
+    .zph2-data-title {
+        text-align: center;
+        font-size: $myTitle;
+    }
+
+    .table {
+        border: 1px solid #000;
+        padding: 5px;
+        box-sizing: border-box;
+
+    // width: 870px;
+    }
+
+    .table-operator {
+        height: $myTitle;
+        line-height: $myTitle;
+    }
+
+    .table-operator .left-f {
+        font-size: $myContent;
+    }
+
+    .table-operator .right-f {
+        font-size: $myTitle;
+    }
+
+    .left-f {
+        float: left;
+    }
+
+    .right-f {
+        float: right;
+    }
+
+    .table-operator2 {
+        //   display: flex;
+        //   justify-content: space-evenly;
+        //   justify-content: flex-start;
+        //   align-items: flex-start;
+        margin-top: -15px;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        //justify-content: space-evenly;
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+        }
+
+        span:nth-child(odd) {
+            font-size: $myContent;
+        }
+
+        span:nth-child(even) {
+            font-size: $myTitle;
+        }
+    }
+
+    .zph-data-span {
+        margin-top: 40px;
+    }
+
+    .zph2-data-span {
+        margin-top: 40px;
+    }
+
+    /* 折线图 */
+    .span-length {
+        margin-top: 40px;
+    }
+
+    .line-container {
+        padding-left: 35px;
+        padding-right: 38px;
+    }
+
+    .right-container {
+        display: flex;
+
+    }
+
+    .right-content-title {
+        display: flex;
+        justify-content: center;
+        // display: inline-block;
+        align-items: center;
+        width: 50px;
+        margin-right: 10px;
+        height: 385px;
+        .content {
+            font-size: $myTitle;
+            color: #333;
+            writing-mode: vertical-lr;
+        }
+    }
+
+    .right-content-charts {
+        flex: 1;
+        display: inline-block;
+        width: calc(100% - 60px);
+        padding-top: 25px;
+        border: 1px solid #000;
+        position: relative;
+        // width: 0;
+        .content-charts {
+            width: 100%;
+        }
+        .radio-wrapper {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          z-index: 8;
+        }
+    }
+}
