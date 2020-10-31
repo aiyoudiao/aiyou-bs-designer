@@ -10,7 +10,7 @@
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-      <router-view :key="key" />
+      <router-view :key="key" :user="user" />
     </transition>
   </section>
 </template>
@@ -18,6 +18,14 @@
 <script>
 export default {
   name: 'AppMain',
+  data() {
+    return {
+      user: {
+        uid: localStorage.getItem('uid'),
+        username: localStorage.getItem('user')
+      }
+    }
+  },
   computed: {
     key() {
       return this.$route.path

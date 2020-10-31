@@ -31,6 +31,16 @@ export default (Layout) => ({
       },
       notTop: true, /* 当子节点为1时也不置顶 */
       component: () => import('@/views/chart-data-manager/chart-data-source/index.vue')
+    },
+    {
+      path: 'my-visual',
+      name: 'my-visual',
+      meta: {
+        title: '我的可视化',
+        icon: 'my-visual'
+      },
+      notTop: true, /* 当子节点为1时也不置顶 */
+      component: () => import('@/views/my-visual-manager/my-visual/index.vue')
     }
   ]
 })

@@ -13,17 +13,7 @@ export default (Layout) => ({
   },
   children: [
     {
-      path: 'my-visual',
-      name: 'my-visual',
-      meta: {
-        title: '我的可视化',
-        icon: 'my-visual'
-      },
-      notTop: true, /* 当子节点为1时也不置顶 */
-      component: () => import('@/views/my-visual-manager/my-visual/index.vue')
-    },
-    {
-      path: 'visual-editor',
+      path: 'visual-editor/:id',
       name: 'visual-editor',
       meta: {
         title: '可视化编辑器',
@@ -33,7 +23,7 @@ export default (Layout) => ({
       component: () => import('@/views/my-visual-manager/visual-editor/index.vue')
     },
     {
-      path: 'visual-view',
+      path: 'visual-view/:id',
       name: 'visual-view',
       meta: {
         title: '可视化|预览',

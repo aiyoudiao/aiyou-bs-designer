@@ -98,7 +98,7 @@ export const asyncRoutes = [
   VisualManager(Layout),
   SystemManager(Layout),
   ChartDataManager(Layout),
-  MyVisualManager(EmptyLayout),
+  MyVisualManager(EmptyLayout, Layout),
   // MyVisualManager(Layout),
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
