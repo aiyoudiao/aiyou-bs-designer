@@ -5,11 +5,14 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
+import EmptyLayout from '@/layout/empty.vue'
 import ChartsManager from './charts-manager'
 import RelationshipManager from './relationship-manager'
 import G6Manager from './g6-manager'
 import VisualManager from './visual-manager'
 import SystemManager from './system-manager'
+import ChartDataManager from './chart-data-manager'
+import MyVisualManager from './my-visual-manager'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -94,6 +97,9 @@ export const asyncRoutes = [
   G6Manager(Layout),
   VisualManager(Layout),
   SystemManager(Layout),
+  ChartDataManager(Layout),
+  MyVisualManager(EmptyLayout),
+  // MyVisualManager(Layout),
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

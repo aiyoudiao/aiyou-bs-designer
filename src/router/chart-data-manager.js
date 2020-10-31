@@ -20,7 +20,7 @@ export default (Layout) => ({
         icon: 'chart-data-list'
       },
       notTop: true, /* 当子节点为1时也不置顶 */
-      component: () => import('@/views/visual-manager/app-wall/index.vue')
+      component: () => import('@/views/chart-data-manager/chart-data-list/index.vue')
     },
     {
       path: 'chart-data-source',
@@ -30,7 +30,7 @@ export default (Layout) => ({
         icon: 'chart-data-source'
       },
       notTop: true, /* 当子节点为1时也不置顶 */
-      component: () => import('@/views/visual-manager/app-wall/index.vue')
+      component: () => import('@/views/chart-data-manager/chart-data-source/index.vue')
     }
   ]
 })

@@ -14,6 +14,7 @@ import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { getToken } from '@/utils/auth' // get token from cookie
 import getPageTitle from '@/utils/get-page-title'
+import ejectRouter from '@/ejectRouter'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -38,7 +39,13 @@ router.beforeEach(async(to, from, next) => {
       // determine whether the user has obtained his permission roles through getInfo
       const hasRoles = store.getters.roles && store.getters.roles.length > 0
       if (hasRoles) {
-        next()
+        /* NOTE 跳之前做个拦截 */
+        const result = Object.values(ejectRouter).includes(to.fullPath)
+        if (result && from.fullPath !== '/') {
+          NProgress.done()
+        } else {
+          next()
+        }
       } else {
         try {
           // get user info
@@ -48,7 +55,6 @@ router.beforeEach(async(to, from, next) => {
           // generate accessible routes map based on roles
           const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
 
-          debugger
           // debugger;
           // dynamically add accessible routes
           router.addRoutes(accessRoutes)
