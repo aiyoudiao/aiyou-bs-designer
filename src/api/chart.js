@@ -48,6 +48,14 @@ export function updateChartItem(id, img, chartData) {
   })
 }
 
+export function updateChartItemTitle(id, title) {
+  return request({
+    url: '/chart/' + id,
+    method: 'put',
+    data: { title: title }
+  })
+}
+
 export function removeChartItem(id) {
   return request({
     url: '/chart/' + id,

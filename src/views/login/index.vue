@@ -87,7 +87,7 @@
           <div class="tip">注册用户，注册成功后，自动登录</div>
         </div>
         <div v-if="!show" class="btn-wrapper">
-          <button class="light-btn" @click="handleClick">进入平台</button>
+          <button class="light-btn" @click="handleClick">进入系统</button>
         </div>
       </div>
     </div>

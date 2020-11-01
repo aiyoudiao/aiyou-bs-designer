@@ -6,11 +6,6 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/layout'
 import EmptyLayout from '@/layout/empty.vue'
-import ChartsManager from './charts-manager'
-import RelationshipManager from './relationship-manager'
-import G6Manager from './g6-manager'
-import VisualManager from './visual-manager'
-import SystemManager from './system-manager'
 import ChartDataManager from './chart-data-manager'
 import MyVisualManager from './my-visual-manager'
 
@@ -92,11 +87,6 @@ export const constantRoutes = [
  */
 
 export const asyncRoutes = [
-  ChartsManager(Layout),
-  RelationshipManager(Layout),
-  G6Manager(Layout),
-  VisualManager(Layout),
-  SystemManager(Layout),
   ChartDataManager(Layout),
   MyVisualManager(EmptyLayout),
   // MyVisualManager(Layout),

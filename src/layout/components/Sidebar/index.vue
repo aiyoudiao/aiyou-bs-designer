@@ -65,7 +65,8 @@ export default {
 
       /* 点击的的菜单在已经记录的需要弹出页面的菜单中时，就直接打开一个新的界面 */
       if (Object.values(ejectRouter).includes(indexPath)) {
-        window.open('/#' + indexPath)
+        const url = window.location.protocol + '//' + window.location.host + window.location.pathname + '/#' + indexPath
+        window.open(url)
       }
       /* 将原来那个菜单选项的高亮还原 */
       this.$refs.menuObj.updateActiveIndex(currentHash)

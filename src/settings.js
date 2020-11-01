@@ -11,7 +11,7 @@
  */
 module.exports = {
 
-  title: '可视化管理系统',
+  title: '张婷图表信息管理系统',
 
   /**
    * @type {boolean} true | false

@@ -67,6 +67,7 @@ import {
   getChartList,
   addChartItem,
   updateChartItem,
+  updateChartItemTitle,
   cloneChartItem,
   removeChartItem
 } from '@/api/chart'
@@ -96,7 +97,8 @@ export default {
         .catch(() => {})
     },
     editChart(id) {
-      this.$router.push(`/my-visual-manager/visual-editor/${id}`)
+      const url = window.location.protocol + '//' + window.location.host + window.location.pathname + `#/my-visual-manager/visual-editor/${id}`
+      window.open(url)
     },
     addNewChart() {
       const userId = this.user.uid
@@ -130,7 +132,7 @@ export default {
         cancelButtonText: '取消'
       })
         .then(({ value }) => {
-          updateChartItem(row._id, value)
+          updateChartItemTitle(row._id, value)
             .then(res => {
               const { errno, data } = res
               if (errno === 0) {
@@ -197,7 +199,8 @@ export default {
         .catch(() => {})
     },
     viewChart(id) {
-      this.$router.push(`/view/${id}`)
+      const url = window.location.protocol + '//' + window.location.host + window.location.pathname + `#/my-visual-manager/visual-view/${id}`
+      window.open(url)
     },
     openChartAnalyse(row) {
       this.analyseVisible = true
