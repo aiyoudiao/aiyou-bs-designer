@@ -290,7 +290,7 @@ export default {
 .component-list {
   flex: 1;
   padding: 0 10px 0 16px;
-  overflow: scroll;
+  // overflow: scroll;
 
   .list-item {
     display: inline-block;

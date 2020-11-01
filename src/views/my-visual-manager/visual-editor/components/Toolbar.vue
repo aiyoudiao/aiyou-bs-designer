@@ -3,31 +3,37 @@
     <div class="toolbox">
       <div class="tool-list">
         <div
-          class="btn"
           v-for="item in btnList"
-          :class="{ active: panelKey === item.key }"
           :key="item.key"
+          class="btn"
+          :class="{ active: panelKey === item.key }"
           @click="showPanel(item.key)"
         >
-          <i class="iconfont" :class="'icon-' + item.key"></i>
+          <i class="iconfont" :class="'icon-' + item.key" />
         </div>
       </div>
       <div class="btn" :class="{ active: panelKey === 'layers' }" @click="showPanel('layers')">
-        <i class="iconfont icon-layer"></i>
+        <i class="iconfont icon-layer" />
       </div>
     </div>
-    <div class="collapse-panel" v-show="panelKey">
-      <SidePanel :panelKey="panelKey"></SidePanel>
+
+    <!-- <el-collapse v-show="panelKey" accordion class="collapse-panel">
+      <el-collapse-item title="一致性 Consistency" name="1">
+        <SidePanel :panel-key="panelKey" />
+      </el-collapse-item>
+    </el-collapse> -->
+    <div v-show="panelKey" class="collapse-panel">
+      <SidePanel :panel-key="panelKey" />
     </div>
   </div>
 </template>
 
 <script>
-import SidePanel from './SidePanel.vue';
+import SidePanel from './SidePanel.vue'
 
 export default {
   components: {
-    SidePanel,
+    SidePanel
   },
   data() {
     return {
@@ -35,39 +41,39 @@ export default {
       btnList: [
         {
           key: 'chart',
-          name: '图表',
+          name: '图表'
         },
         {
           key: 'text',
-          name: '文字',
+          name: '文字'
         },
         {
           key: 'picture',
-          name: '图片',
+          name: '图片'
         },
         {
           key: 'tools',
-          name: '组件',
-        },
+          name: '组件'
+        }
       ],
-      showCollapsePanel: false,
-    };
+      showCollapsePanel: false
+    }
   },
   computed: {
     chartData() {
-      return this.$parent.chartData;
-    },
+      return this.$parent.chartData
+    }
   },
   methods: {
     showPanel(key) {
       if (this.panelKey === key) {
-        this.panelKey = '';
+        this.panelKey = ''
       } else {
-        this.panelKey = key;
+        this.panelKey = key
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

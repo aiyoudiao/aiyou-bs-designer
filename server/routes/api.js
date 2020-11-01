@@ -8,7 +8,8 @@ router.prefix('/api')
 
 router.post('/uploadfile', async (ctx, next) => {
   const file = ctx.request.files.file; // 获取上传文件
-  const newFileName = file.path.split('/').pop(); // 取新的文件名
+  const newFileName = path.basename(file.path) // 获取文件名称
+
   return ctx.body = {
     success: true,
     url: `http://localhost:3000/upload/${newFileName}`,

@@ -146,7 +146,9 @@ export default {
                       type: 'success',
                       message: '保存成功'
                     })
-                    this.$router.push('/console/data')
+                    this.$router.push({
+                      name: 'chart-data-list'
+                    })
                     // this.editChart(data._id);
                   }
                 })

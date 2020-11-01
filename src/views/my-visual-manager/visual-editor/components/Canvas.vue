@@ -226,6 +226,15 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+
+  // background-image: url(~@/assets/chart/bg/bg1.png);
+  // background-position: 0% 0%;
+  // background-size: 100% 100%;
+  // background-repeat: initial;
+  // background-attachment: initial;
+  // background-origin: initial;
+  // background-clip: initial;
+
   .vdr {
     border: 0;
   }

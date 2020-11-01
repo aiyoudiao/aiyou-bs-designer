@@ -55,7 +55,9 @@ export default {
         .catch(() => {})
     },
     addData() {
-      this.$router.push('data/add')
+      this.$router.push({
+        name: 'chart-data-source'
+      })
     },
     renameData(row) {
       this.$prompt('输入大屏标题', '重命名', {
@@ -111,4 +113,8 @@ export default {
 
 <style lang="scss" scoped>
 
+.wrapper {
+  padding: 20px;
+
+}
 </style>

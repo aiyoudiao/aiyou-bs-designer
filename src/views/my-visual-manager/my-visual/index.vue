@@ -7,6 +7,21 @@
       </el-table>
     </el-dialog>
     <el-row>
+      <el-col :span="6">
+        <el-card
+          :body-style="{ padding: '0px' }"
+          shadow="hover"
+          calss="my-add-card"
+          @click.native="addNewChart"
+        >
+          <div class="add-card">
+            <i class="el-icon-plus" />
+            <div class="add-card-title">
+              添加大屏
+            </div>
+          </div>
+        </el-card>
+      </el-col>
       <el-col v-for="item in chartList" :key="item._id" :span="6">
         <el-card
           :body-style="{ padding: '0px' }"
@@ -19,23 +34,28 @@
               style="float: right;"
             ><i class="el-icon-more" />
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item @click.native="editChart(item._id)">编辑</el-dropdown-item>
-                <el-dropdown-item @click.native="renameChart(item)">重命名</el-dropdown-item>
-                <el-dropdown-item @click.native="copyChart(item)">复制</el-dropdown-item>
-                <el-dropdown-item @click.native="deleteChart(item._id)">删除</el-dropdown-item>
+                <el-dropdown-item
+                  @click.native="editChart(item._id)"
+                >编辑</el-dropdown-item>
+                <el-dropdown-item
+                  @click.native="renameChart(item)"
+                >重命名</el-dropdown-item>
+                <el-dropdown-item
+                  @click.native="copyChart(item)"
+                >复制</el-dropdown-item>
+                <el-dropdown-item
+                  @click.native="deleteChart(item._id)"
+                >删除</el-dropdown-item>
                 <el-dropdown-item
                   divided
                   @click.native="viewChart(item._id)"
                 >访问</el-dropdown-item>
-                <el-dropdown-item @click.native="openChartAnalyse(item)">查看统计</el-dropdown-item>
+                <el-dropdown-item
+                  @click.native="openChartAnalyse(item)"
+                >查看统计</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card :body-style="{ padding: '0px' }" shadow="hover" @click.native="addNewChart">
-          <div class="add-card"><i class="el-icon-circle-plus" /></div>
         </el-card>
       </el-col>
     </el-row>
@@ -43,7 +63,13 @@
 </template>
 
 <script>
-import { getChartList, addChartItem, updateChartItem, cloneChartItem, removeChartItem } from '@/api/chart'
+import {
+  getChartList,
+  addChartItem,
+  updateChartItem,
+  cloneChartItem,
+  removeChartItem
+} from '@/api/chart'
 
 export default {
   props: ['user'],
@@ -195,13 +221,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-// .wrapper {
-//   ::v-deep .el-card {
-//     padding-left: 15px;
-//     padding-right: 15px;
-//   }
-// }
+.wrapper {
+  ::v-deep .el-card {
+    margin: 20px;
+  }
+}
 
 .page-header-slot {
   position: fixed;
@@ -238,10 +262,40 @@ export default {
 }
 
 .el-card .add-card {
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
-  font-size: 82px;
-  color: rgba(0, 0, 0, 0.08);
+  height: 198px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  &:hover {
+      background-color: #4cc9f0;
+      -webkit-box-shadow: 10px 10px 99px 2px rgba(76, 201, 240, 1);
+      -moz-box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+      box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+
+  }
+  &:hover .el-icon-plus {
+    font-size: 45px;
+    color: white;
+  }
+
+  &:hover .add-card-title {
+    font-size: 20px;
+    color: white;
+  }
+
+  .el-icon-plus {
+    font-size: 25px;
+    padding-bottom: 10px;
+    transition: all 0.5s;
+  }
+
+  .add-card-title {
+    font-size: 16px;
+    transition: all 0.5s;
+  }
 }
 </style>

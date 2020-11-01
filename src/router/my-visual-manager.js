@@ -7,6 +7,7 @@ export default (Layout) => ({
   component: Layout,
   redirect: 'my-visual',
   name: 'my-visual-manager',
+  hidden: true,
   meta: {
     title: '我的可视化管理',
     icon: 'nested'
@@ -15,6 +16,7 @@ export default (Layout) => ({
     {
       path: 'visual-editor/:id',
       name: 'visual-editor',
+      hidden: true,
       meta: {
         title: '可视化编辑器',
         icon: 'visual-editor'
@@ -25,6 +27,7 @@ export default (Layout) => ({
     {
       path: 'visual-view/:id',
       name: 'visual-view',
+      hidden: true,
       meta: {
         title: '可视化|预览',
         icon: 'visual-view'

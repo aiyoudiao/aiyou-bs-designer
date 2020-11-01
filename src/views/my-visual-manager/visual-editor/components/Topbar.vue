@@ -5,7 +5,7 @@
       class="btn iconfont icon-preview"
       :class="{ active: $parent.preview }"
       @click="$parent.preview = !$parent.preview"
-    ></i>
+    />
     <div class="publish-btn" @click="saveChartData">发布</div>
   </div>
 </template>
@@ -13,19 +13,19 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
   computed: {
     pageTitle() {
-      return this.$route.meta.title;
-    },
+      return this.$route.meta.title
+    }
   },
   methods: {
     saveChartData() {
-      this.$parent.saveChartData();
-    },
-  },
-};
+      this.$parent.saveChartData()
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -33,7 +33,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  background: #333333ee;
+  background: rgb(33, 37, 40);
   padding: 0 20px;
 }
 

@@ -14,9 +14,9 @@ export default (Layout) => ({
   children: [
     {
       path: 'chart-data-list',
-      name: '',
+      name: 'chart-data-list',
       meta: {
-        title: '数据列表',
+        title: '我的数据源',
         icon: 'chart-data-list'
       },
       notTop: true, /* 当子节点为1时也不置顶 */
@@ -25,6 +25,7 @@ export default (Layout) => ({
     {
       path: 'chart-data-source',
       name: 'chart-data-source',
+      hidden: true,
       meta: {
         title: '数据源添加',
         icon: 'chart-data-source'
